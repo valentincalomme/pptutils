@@ -1,4 +1,5 @@
 #---------------------------------------- Setup ---------------------------------------#
+include .env
 
 SRC_DIR = src/
 TESTS_DIR = tests/
@@ -10,7 +11,7 @@ MODULES = ${SRC_DIR} ${TESTS_DIR}
 
 #-------------------------------- Installation scripts --------------------------------#
 
-.PHONY: init install build lock upgrade
+.PHONY: init install build publish lock upgrade
 
 # Run this command to setup the project
 init: lock install install-pre-commit build
@@ -26,6 +27,10 @@ install-pre-commit:
 # Build the package
 build:
 	uv build
+
+# Publish the package
+publish:
+	UV_PUBLISH_TOKEN=${UV_PUBLISH_TOKEN} uv publish
 
 # Lock the dependency versions
 lock:
