@@ -1,0 +1,39 @@
+[project]
+name = "pptutils"
+readme = "README.md"
+authors = [{ name = "Valentin Calomme", email = "dev@valentincalomme.com" }]
+requires-python = ">=3.11"
+dependencies = []
+
+dynamic = ["version", "description"]
+
+[project.scripts]
+pptutils = "pptutils:main"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+    { include-group = "docs" },
+    { include-group = "qa" },
+    { include-group = "test" },
+
+]
+docs = ["mkdocs-material>=9.5.46"]
+qa = ["mypy>=1.13.0", "pyright>=1.1.389", "ruff>=0.8.0"]
+test = [
+    "pytest>=8.3.3",
+    "pytest-cov>=6.0.0",
+]
+
+[build-system]
+requires = ["hatchling >= 1.12.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/pptutils/__init__.py"
+
+[tool.hatch.build]
+ignore-vcs = true
+only-packages = true
+include = ["src/pptutils/**/*.py", "src/pptutils/py.typed"]
+packages = ["src/pptutils"]

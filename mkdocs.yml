@@ -1,0 +1,5 @@
+site_name: pptutils
+nav:
+  - Home: index.md
+theme:
+  name: material
