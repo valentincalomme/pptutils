@@ -3,7 +3,7 @@ name = "pptutils"
 readme = "README.md"
 authors = [{ name = "Valentin Calomme", email = "dev@valentincalomme.com" }]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["python-pptx>=1.0.2"]
 
 dynamic = ["version", "description"]
 
@@ -20,10 +20,7 @@ dev = [
 ]
 docs = ["mkdocs-material>=9.5.46"]
 qa = ["mypy>=1.13.0", "pyright>=1.1.389", "ruff>=0.8.0"]
-test = [
-    "pytest>=8.3.3",
-    "pytest-cov>=6.0.0",
-]
+test = ["pytest>=8.3.3", "pytest-cov>=6.0.0"]
 
 [build-system]
 requires = ["hatchling >= 1.12.0"]
