@@ -5,7 +5,7 @@ default_language_version:
 repos:
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
-    rev: 0.5.4
+    rev: 0.5.6
     hooks:
       # Compile requirements
       - id: uv-lock
@@ -54,7 +54,7 @@ repos:
       - id: checkmake
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.0
+    rev: v0.8.2
     hooks:
       # Lint the code itself
       - id: ruff
@@ -68,7 +68,7 @@ repos:
         language: system
 
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.389
+    rev: v1.1.390
     hooks:
       - id: pyright
         language: system
